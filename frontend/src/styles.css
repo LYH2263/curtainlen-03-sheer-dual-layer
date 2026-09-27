@@ -11,3 +11,19 @@ body{margin:0;font-family:Segoe UI,sans-serif;background:#e8eef5}
 .panel{width:28px;background:#5dade2;border:1px solid #2874a6}
 .bad{color:#c0392b}
 .fab{margin:.25rem 0}
+.panel.sheer{background:#a9d6e5;border-color:#5499c7}
+.muted{color:#5d6d7e}
+.layer{margin:1.25rem 0}
+.layer h3{margin:.5rem 0 0;color:#154360}
+.switch{margin:0 .5rem}
+.sheer-inputs{display:inline-flex;gap:.5rem;align-items:center;margin-right:.5rem}
+.sheer-inputs input{width:5rem}
+.runs{border-collapse:collapse;margin-top:1rem}
+.runs th,.runs td{border:1px solid #aab7c4;padding:.3rem .55rem;text-align:left}
+.runs th{background:#d4e6f1;color:#154360}
+.detail{border-collapse:collapse;margin:.5rem 0}
+.detail th,.detail td{border:1px solid #c5d2de;padding:.2rem .5rem;text-align:left}
+.detail th{background:#eaf2f8;font-weight:600}
+.run-card{border:1px solid #c5d2de;border-left:4px solid #2874a6;padding:.25rem .75rem;margin:.75rem 0;background:#fff}
+.nowrap{white-space:nowrap;color:#5d6d7e;font-size:.85rem;margin:.25rem 0}
+h2{color:#154360}
