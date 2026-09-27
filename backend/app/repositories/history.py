@@ -14,13 +14,18 @@ def insert_run(window_id, fabric_id, result, note=""):
     finally:
         c.close()
 
-def list_runs(limit=50):
+def list_runs(limit=50, window_id=None):
+    sql = ("SELECT r.*, w.name window_name, f.name fabric_name FROM calc_runs r "
+           "LEFT JOIN windows w ON w.id=r.window_id LEFT JOIN fabrics f ON f.id=r.fabric_id ")
+    params = []
+    if window_id is not None:
+        sql += "WHERE r.window_id=? "
+        params.append(window_id)
+    sql += "ORDER BY r.id DESC LIMIT ?"
+    params.append(limit)
     c = connect()
     try:
-        rows = c.execute(
-            """SELECT r.*, w.name window_name, f.name fabric_name FROM calc_runs r
-            LEFT JOIN windows w ON w.id=r.window_id LEFT JOIN fabrics f ON f.id=r.fabric_id
-            ORDER BY r.id DESC LIMIT ?""", (limit,)).fetchall()
+        rows = c.execute(sql, params).fetchall()
         out = []
         for row in rows:
             d = dict(row)
